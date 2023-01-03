@@ -1,1 +1,0 @@
-export 'package:morita_app/widgets/SensorCard.dart';
