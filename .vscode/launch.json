@@ -1,32 +1,25 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    // Use IntelliSense para saber los atributos posibles.
+    // Mantenga el puntero para ver las descripciones de los existentes atributos.
+    // Para más información, visite: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "morita_app (web)",
-            "cwd": "morita_app",
-            "request": "launch",
-            "type": "dart",
-            "args": ["--web-port", "8080"]
-        },
-        {
-            "name": "morita_app",
-            "cwd": "morita_app",
+            "name": "sensores_app",
+            "cwd": "flutter-fci-morita/sensores_app",
             "request": "launch",
             "type": "dart"
         },
         {
-            "name": "morita_app (profile mode)",
-            "cwd": "morita_app",
+            "name": "sensores_app (profile mode)",
+            "cwd": "flutter-fci-morita/sensores_app",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
         },
         {
-            "name": "morita_app (release mode)",
-            "cwd": "morita_app",
+            "name": "sensores_app (release mode)",
+            "cwd": "flutter-fci-morita/sensores_app",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"
