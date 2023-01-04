@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/widgets.dart';
@@ -8,60 +9,41 @@ class PiscinasPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: CustomScrollView(
-          slivers: [
-            const TittleBar('P I S C I N A S'),
-            
-            //el grid de las piscinas
-            SliverPadding(
-              padding: const EdgeInsets.all(10),
-              sliver: SliverGrid(
-                gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                  maxCrossAxisExtent: 600,
-                  mainAxisSpacing: 20,
-                  crossAxisSpacing: 20,
-                  childAspectRatio: 5 / 2,
-                ),
-                delegate: SliverChildBuilderDelegate(
-                  (context, index) {
-                    return PiscinaCard(
-                      index: index,
-                    );
-                  },
-                  childCount: 5,
-                ),
+      body: CustomScrollView(
+        slivers: [
+           TittleBar('P I S C I N A S',
+            accion: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextButton(
+                child: const Text('Agregar Piscina',style: TextStyle(color: Colors.blue),),
+                onPressed: (){},
               ),
             ),
-            
-            //el boton de agregar piscina
-            SliverPadding(
-              padding: const EdgeInsets.all(10),
-              sliver: SliverList(
-                delegate: SliverChildListDelegate(
-                  [
-                    InkWell(
-                      borderRadius: BorderRadius.circular(20),
-                      child: Container(
-                        height: 100,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: Colors.blue[900] ?.withOpacity(0.4),
-                        ),
-                        child: const Center(
-                          child: Icon(Icons.add,size: 60,),
-                        ),
-                      ),
-                      onTap: () {
-                        // Navigator.pushNamed(context, 'piscinasInfo');
-                      },
-                    ),
-                  ],
-                ),
-              ),              // ),
+          ),
+        
+          //el grid de las piscinas
+          SliverPadding(
+            padding: const EdgeInsets.all(10),
+            sliver: SliverGrid(
+              gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                maxCrossAxisExtent: 600,
+                mainAxisSpacing: 20,
+                crossAxisSpacing: 20,
+                childAspectRatio: 5 / 2,
+              ),
+              delegate: SliverChildBuilderDelegate(
+                (context, index) {
+                  return PiscinaCard(
+                    index: index,
+                  );
+                },
+                childCount: 5,
+              ),
             ),
-          ],
-        ),
+          ),
+          
+          
+        ],
       ),
     );
   }
@@ -79,23 +61,16 @@ class PiscinaCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      borderRadius: BorderRadius.circular(20),
-      onTap: () {
-        Navigator.pushNamed(context, 'piscinasInfo');
-      },
-      child: Container(
-          alignment: Alignment.center,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20),
-            color: Colors.blue[
-              //si el residuo de la division es 0, entonces el color es 50, sino es 100 * (index % 9)
-              //ocea todos los tiles seran pintados de azul, pero cada 9 tiles, el color sera 50
-              (100 * (index % 9)) == 0 ? 50 : (100 * (index % 9))
-            ]?.withOpacity(0.1),
-            
-          ),
-          child: Container(
+    return Card(
+      shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20),
+        ),
+      child: InkWell(
+        borderRadius: BorderRadius.circular(20),
+        onTap: () {
+          Navigator.pushNamed(context, 'piscinasInfo');
+        },
+        child: Container(
             padding: const EdgeInsets.all(20),
             child: Column(
               children: [
@@ -120,7 +95,7 @@ class PiscinaCard extends StatelessWidget {
               ],
             ),
           ),
-        ),
+      ),
     );
   }
 }
