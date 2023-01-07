@@ -16,7 +16,12 @@ class PiscinasPage extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: TextButton(
                 child: const Text('Agregar Piscina',style: TextStyle(color: Colors.blue),),
-                onPressed: (){},
+                onPressed: () => {
+                    
+                    showDialog(context: context, 
+                      builder: (_)  => NuevaPiscinaDialog(),
+                    ),
+                  },
               ),
             ),
           ),
@@ -49,54 +54,118 @@ class PiscinasPage extends StatelessWidget {
   }
 }
 
-class PiscinaCard extends StatelessWidget {
-  final int index;
-  final String nombre;
+// class PiscinaCard extends StatelessWidget {
+//   final int index;
+//   final String nombre;
 
-  const PiscinaCard({
-    Key? key,
-    required this.index,
-    this.nombre = "Piscina",
-  }) : super(key: key);
+//   const PiscinaCard({
+//     Key? key,
+//     required this.index,
+//     this.nombre = "Piscina",
+//   }) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
-        ),
-      child: InkWell(
-        borderRadius: BorderRadius.circular(20),
-        onTap: () {
-          Navigator.pushNamed(context, 'piscinasInfo');
-        },
-        child: Container(
-            padding: const EdgeInsets.all(20),
-            child: Column(
-              children: [
-                // estado de la piscina
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Text("Reposo...", style: TextStyle(color: Colors.blueGrey, fontSize: 12),),
-                    Container(
-                      width:10,
-                    ),
-                    StatusDot(Colors.blueGrey),
-                  ],
-                ),
-                Expanded(
-                  child: Container(
-                    child: Center(
-                      child: Text("$nombre $index",style: TextStyle(fontSize: 20),),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Card(
+//       shape: RoundedRectangleBorder(
+//           borderRadius: BorderRadius.circular(20),
+//         ),
+//       child: InkWell(
+//         borderRadius: BorderRadius.circular(20),
+//         onTap: () {
+//           Navigator.pushNamed(context, 'piscinasInfo');
+//         },
+//         child: Container(
+//             padding: const EdgeInsets.all(20),
+//             child: Column(
+//               children: [
+//                 // estado de la piscina
+//                 Row(
+//                   mainAxisAlignment: MainAxisAlignment.end,
+//                   children: [
+//                     Text("Reposo...", style: TextStyle(color: Colors.blueGrey, fontSize: 12),),
+//                     Container(
+//                       width:10,
+//                     ),
+//                     StatusDot(Colors.blueGrey),
+//                   ],
+//                 ),
+//                 Expanded(
+//                   child: Container(
+//                     child: Center(
+//                       child: Text("$nombre $index",style: TextStyle(fontSize: 20),),
+//                     ),
+//                   ),
+//                 ),
+//               ],
+//             ),
+//           ),
+//       ),
+//     );
+//   }
+// }
 
+
+//TODO: agregarque si no hay nombre no pueda darle a agregar
+// class NuevaPiscinaDialog extends StatefulWidget {
+
+//   const NuevaPiscinaDialog({super.key});
+
+//   @override
+//   State<NuevaPiscinaDialog> createState() => _NuevaPiscinaDialogState();
+// }
+
+// class _NuevaPiscinaDialogState extends State<NuevaPiscinaDialog> {
+//   var _nombre = "";
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return CupertinoAlertDialog(
+//       title: const Text('Nueva Piscina\n'),
+//       content: CupertinoTextField(
+
+//         style: TextStyle(color: Colors.white),
+//         placeholder: 'Nombre de la piscina',
+//         onChanged: (value) => {
+//           setState(() {
+//             _nombre = value;
+//           }),
+//         }
+//       ),
+//       actions: [
+//         CupertinoDialogAction(
+//           child: const Text('Cancelar'),
+//           onPressed: () => Navigator.pop(context),
+//         ),
+//         CupertinoDialogAction(
+//           child: const Text('Agregar'),
+//           onPressed: _nombre != "" ? () {
+//             Navigator.of(context).pop();
+//             showCupertinoDialog(
+//               context: context,
+//               builder: (context) => CupertinoAlertDialog(
+//                 title: Text('se agregara la piscina\n $_nombre'),
+                
+//                 actions: [
+//                   CupertinoDialogAction(
+//                     child: Text('Cancelar', style: TextStyle(color: Colors.red),),
+//                     onPressed: () {
+//                       Navigator.of(context).pop();
+//                     },
+//                   ),
+//                   CupertinoDialogAction(
+//                     child: Text('Aceptar'),
+//                     onPressed: () {
+//                       Navigator.of(context).pop();
+//                       //TODO: aqui comienza a crearse un nuevo censo
+//                     },
+//                   ),
+//                 ],
+//               ),
+//             );
+//           }:null,
+//         ),
+//       ],
+//     );
+//   }
+// }

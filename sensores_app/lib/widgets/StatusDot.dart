@@ -9,6 +9,7 @@ class StatusDot extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     return Container(
       width: 8,
       height: 8,

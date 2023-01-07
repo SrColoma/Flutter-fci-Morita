@@ -1,7 +1,18 @@
-import 'package:flutter/material.dart';
-import 'package:sensores_app/pages/Pages.dart';
+import 'dart:developer';
 
-void main() => runApp(const MyApp());
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:sensores_app/pages/Pages.dart';
+import 'package:sensores_app/provider.dart';
+
+void main() => runApp(
+  MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => provider()),
+      ],
+      child: const MyApp(),
+    ),
+);
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -12,12 +23,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(),
       title: 'Camaronera',
-      initialRoute: 'piscinaPage',
+      initialRoute: 'loguin',
       routes: {
+        'loguin': (context) => const Loguin(),
         'piscinaPage': (context) => const PiscinasPage(),
-        'nuevaPiscina': (context) => const NuevaPiscina(),
         'piscinasInfo': (context) => const PiscinasInfo(),
-        'nuevoCenso': (context) => const NuevoCenso(),
         'censado': (context) => const Censado(),
       },
     );
