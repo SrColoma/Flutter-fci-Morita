@@ -1,18 +1,22 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:provider/provider.dart';
 import 'package:sensores_app/pages/Pages.dart';
 import 'package:sensores_app/provider.dart';
 
-void main() => runApp(
-  MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (_) => provider()),
-      ],
-      child: const MyApp(),
-    ),
-);
+void main() async{
+  await dotenv.load(fileName: ".env");
+  runApp(
+    MultiProvider(
+        providers: [
+          ChangeNotifierProvider(create: (_) => provider()),
+        ],
+        child: const MyApp(),
+      ),
+  );
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -35,28 +39,3 @@ class MyApp extends StatelessWidget {
 
 
 }
-
-// import 'package:flutter/cupertino.dart';
-
-// void main() => runApp(const MyApp());
-
-// class MyApp extends StatelessWidget {
-//   const MyApp({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return CupertinoApp(
-//       title: 'Camaronera',
-//       initialRoute: 'piscinaPage',
-//       debugShowCheckedModeBanner: false,
-//       // theme: ThemeData.dark(),
-//       routes: {
-//         'piscinaPage': (context) => const PiscinasPage(),
-//         'nuevaPiscina': (context) => const NuevaPiscina(),
-//         'piscinasInfo': (context) => const PiscinasInfo(),
-//         'nuevoCenso': (context) => const NuevoCenso(),
-//         'censado': (context) => const Censado(),
-//       },
-//     );
-//   }
-// }

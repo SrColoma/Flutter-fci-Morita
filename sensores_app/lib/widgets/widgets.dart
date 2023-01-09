@@ -4,3 +4,4 @@ export 'package:sensores_app/widgets/NuevaPiscinaDialog.dart';
 export 'package:sensores_app/widgets/PiscinaCard.dart';
 export 'package:sensores_app/widgets/CensoCard.dart';
 export 'package:sensores_app/widgets/NuevoCensoDialog.dart';
+export 'package:sensores_app/widgets/NuevoPasswordDialog.dart';

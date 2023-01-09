@@ -1,18 +1,17 @@
 import 'package:flutter/foundation.dart';
+import 'package:sensores_app/services/AwsServices.dart';
 
 class provider with ChangeNotifier {
-  String cosa1 = "";
-  String cosas2 = "";
+  AwsServices awsServices = AwsServices();
 
-  String get getCosa1 => cosa1;
-  String get getCosa2 => cosas2;
+  AwsServices get getAwsServices => awsServices;
 
-  Future<void> getDatos({
-    required String c1,
-    required String c2,
-  }) async {
-    this.cosa1 = c1;
-    this.cosas2 = c2;
-    notifyListeners();
-  }
+  // Future<void> getDatos({
+  //   required String c1,
+  //   required String c2,
+  // }) async {
+  //   this.cosa1 = c1;
+  //   this.cosas2 = c2;
+  //   notifyListeners();
+  // }
 }
