@@ -56,7 +56,7 @@ class _LoguinState extends State<Loguin> {
                   onPressed: () => {
                     // para usar el loguin con aws cognito descomentar _Loguin
                     // _login(provider),
-                    Navigator.popAndPushNamed(context, 'piscinaPage'),
+                    Navigator.popAndPushNamed(context, 'rickandmorti'),
                   },
                 ),
               ),
