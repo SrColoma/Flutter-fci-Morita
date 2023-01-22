@@ -31,7 +31,8 @@ class MyApp extends StatelessWidget {
       routes: {
         'loguin': (context) => const Loguin(),
         'piscinaPage': (context) => const PiscinasPage(),
-        'piscinasInfo': (context) => const PiscinasInfo(),
+        'reportes': (context) => const ReportesPage(),
+        'reporteconcreto': (context) => const ReporteConcreto(),
         'censores': (context) => const Censores(),
       },
     );

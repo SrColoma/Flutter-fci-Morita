@@ -46,7 +46,7 @@ class MenuDrawer extends StatelessWidget {
               onTap: () {
                 // Update the state of the app.
                 // ...
-                Navigator.popAndPushNamed(context, 'censores');
+                Navigator.pushReplacementNamed(context, 'censores');
               },
             ),
             ListTile(
@@ -55,7 +55,7 @@ class MenuDrawer extends StatelessWidget {
               onTap: () {
                 // Update the state of the app.
                 // ...
-                Navigator.popAndPushNamed(context, 'piscinaPage');
+                Navigator.pushReplacementNamed(context, 'piscinaPage');
               },
             ),
             //list tile con icono de personas
@@ -65,7 +65,7 @@ class MenuDrawer extends StatelessWidget {
               onTap: () {
                 // Update the state of the app.
                 // ...
-                Navigator.popAndPushNamed(context, 'piscinasInfo');
+                Navigator.pushReplacementNamed(context, 'reportes');
               },
             ),
             ListTile(
@@ -74,7 +74,7 @@ class MenuDrawer extends StatelessWidget {
               onTap: () {
                 // Update the state of the app.
                 // ...
-                Navigator.popAndPushNamed(context, 'piscinaPage');
+                Navigator.pushReplacementNamed(context, 'piscinaPage');
               },
             ),
             // ListTile(
@@ -92,7 +92,7 @@ class MenuDrawer extends StatelessWidget {
               onTap: () {
                 // Update the state of the app.
                 // ...
-                Navigator.popAndPushNamed(context, 'loguin');
+                Navigator.pushReplacementNamed(context, 'loguin');
               },
             ),
             

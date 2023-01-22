@@ -22,7 +22,7 @@ class PiscinaCard extends StatelessWidget {
       child: InkWell(
         borderRadius: BorderRadius.circular(20),
         onTap: () {
-          Navigator.pushNamed(context, 'piscinasInfo');
+          Navigator.pushNamed(context, 'reportes');
         },
         child: Container(
             padding: const EdgeInsets.all(20),

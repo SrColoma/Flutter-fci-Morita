@@ -10,3 +10,5 @@ export 'package:sensores_app/widgets/NuevoPasswordDialog.dart';
 export 'package:sensores_app/widgets/MenuDrawer.dart';
 
 export 'package:sensores_app/widgets/NuevoFrecuenciaDialog.dart';
+export 'package:sensores_app/widgets/ReporteCard.dart';
+export 'package:sensores_app/widgets/NuevoReporteDialog.dart';

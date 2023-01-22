@@ -27,6 +27,7 @@ class _NuevoFrecuenciaDialogState extends State<NuevoFrecuenciaDialog> {
                 () => showCupertinoModalPopup(
                   context: context,
                   builder: (context) => Container(
+                    color: Colors.white,
                     // height: Screen.height(context) * 0.5,
                     height: MediaQuery.of(context).size.height * 0.5,
                     // height: 500,
