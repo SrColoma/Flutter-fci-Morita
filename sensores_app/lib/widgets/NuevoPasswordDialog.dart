@@ -20,7 +20,7 @@ class _NuevoPasswordDialogState extends State<NuevoPasswordDialog> {
       title: const Text('Debe cambiar la contraseña\n'),
       content: CupertinoTextField(
 
-        style: TextStyle(color: Colors.white),
+        // style: TextStyle(color: Colors.white),
         placeholder: 'Nueva contraseña',
         onChanged: (value) => {
           setState(() {
@@ -54,8 +54,8 @@ class _NuevoPasswordDialogState extends State<NuevoPasswordDialog> {
                       child: Text('Aceptar'),
                       onPressed: () {
                         provider.awsServices.NewPasswordRequired(_nombre);
-                        Navigator.of(context).popAndPushNamed('PiscinasPage');
-                        Navigator.of(context).pop();
+                        // Navigator.of(context).pop();
+                        Navigator.of(context).popAndPushNamed('piscinaPage');
                       },
                     ),
                   ),

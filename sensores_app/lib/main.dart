@@ -25,17 +25,22 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.dark(),
+      theme: ThemeData.light(),
       title: 'Camaronera',
       initialRoute: 'loguin',
       routes: {
         'loguin': (context) => const Loguin(),
         'piscinaPage': (context) => const PiscinasPage(),
         'piscinasInfo': (context) => const PiscinasInfo(),
-        'censado': (context) => const Censado(),
+        'censores': (context) => const Censores(),
       },
     );
   }
 
 
 }
+
+
+//TODO: pensar que hacer con el boton individual de cada piscina
+// reacer la pantalla de reportes, mirar el documento para guiarse, filtros y descarga
+// pantalla de gestion de usuarios

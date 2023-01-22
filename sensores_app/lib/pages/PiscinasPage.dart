@@ -9,22 +9,54 @@ class PiscinasPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: MenuDrawer(),
       body: CustomScrollView(
         slivers: [
-           TittleBar('P I S C I N A S',
-            accion: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextButton(
-                child: const Text('Agregar Piscina',style: TextStyle(color: Colors.blue),),
-                onPressed: () => {
-                    
-                    showDialog(context: context, 
-                      builder: (_)  => NuevaPiscinaDialog(),
-                    ),
-                  },
+          SliverPadding(
+            padding: const EdgeInsets.all(10),
+            sliver: SliverAppBar(
+              shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(
+                   Radius.circular(20),
+                ),
               ),
+              flexibleSpace: FlexibleSpaceBar(
+                title: const Text('P I S C I N A S'),
+                
+              ),
+              actions: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: TextButton(
+                    child: const Text('Agregar Piscina',style: TextStyle(color: Colors.white),),
+                    onPressed: () => {
+                      
+                        showDialog(context: context, 
+                          builder: (_)  => NuevaPiscinaDialog(),
+                        ),
+                      },
+                  ),
+                ),
+                // 
+              ],
             ),
           ),
+          // TittleBar('P I S C I N A S',
+          //   accion: Padding(
+          //     padding: const EdgeInsets.all(8.0),
+          //     child: TextButton(
+          //       child: const Text('Agregar Piscina',style: TextStyle(color: Colors.blue),),
+          //       onPressed: () => {
+                    
+          //           showDialog(context: context, 
+          //             builder: (_)  => NuevaPiscinaDialog(),
+          //           ),
+          //         },
+          //     ),
+          //   ),
+          // ),
+
+          
         
           //el grid de las piscinas
           SliverPadding(
@@ -53,6 +85,7 @@ class PiscinasPage extends StatelessWidget {
     );
   }
 }
+
 
 // class PiscinaCard extends StatelessWidget {
 //   final int index;

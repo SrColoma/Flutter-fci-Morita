@@ -28,17 +28,44 @@ class _LoguinState extends State<Loguin> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const CircleAvatar(
-                radius: 100,
-                backgroundImage: AssetImage('assets/images/PH.jpg'),
+              // const CircleAvatar(
+              //   radius: 100,
+              //   backgroundImage: AssetImage('assets/images/logofci.png'),
+              // ),
+              //imagen de logo
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(40),
+                  color: Colors.blue,
+                ),
+                child: Center(child: Image.asset(
+                  'assets/images/logofci.png', 
+                  width: 200,
+                  height: 200,
+                  
+                ))
               ),
               const SizedBox(height: 10),
-              const Text('Sensores Morita System S.A.'),
+              const Text('Hola soy Salem\nEl socio camaron del acuicultor', 
+                style: TextStyle(
+                  color: Colors.blueGrey,
+                  
+                ),
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 20),
+              const Text('Iniciar Sesión', 
+                style: TextStyle(
+                  color: Colors.blueGrey,
+                  fontSize: 20,
+                ),
+                textAlign: TextAlign.center,
+              ),
               const SizedBox(height: 20),
 
               CupertinoTextField(
                 controller: _usernameController,
-                style: const TextStyle(color: Colors.white),
+                // style: const TextStyle(color: Colors.white),
                 placeholder: 'Usuario',
               ),
               const SizedBox(height: 4),
@@ -47,7 +74,7 @@ class _LoguinState extends State<Loguin> {
                 //modo password
                 // obscureText: true,
                 controller: _passwordController,
-                style: const TextStyle(color: Colors.white),
+                // style: const TextStyle(color: Colors.white),
                 placeholder: 'Contraseña',
               ),
               Consumer<provider>(
@@ -56,7 +83,7 @@ class _LoguinState extends State<Loguin> {
                   onPressed: () => {
                     // para usar el loguin con aws cognito descomentar _Loguin
                     // _login(provider),
-                    Navigator.popAndPushNamed(context, 'rickandmorti'),
+                    Navigator.popAndPushNamed(context, 'censores'),
                   },
                 ),
               ),

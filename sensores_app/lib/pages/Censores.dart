@@ -3,26 +3,65 @@ import 'package:flutter/material.dart';
 
 import '../widgets/widgets.dart';
 
-class Censado extends StatelessWidget {
-  const Censado({super.key});
+class Censores extends StatelessWidget {
+  const Censores({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: const MenuDrawer(),
       body: SafeArea(
         child: CustomScrollView(
           slivers: [
-            TittleBar('Piscina23 - 12/04/1998',
-              accion: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: TextButton(
-                  child: const Text('Descargar',style: TextStyle(color: Colors.blue),),
-                  onPressed: () => {
-                    
-                  },
+            SliverPadding(
+              padding: const EdgeInsets.all(10),
+
+              sliver: SliverAppBar(
+                shape: const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(
+                     Radius.circular(20),
+                  ),
+                ),
+                // floating: true,
+                // snap: true,
+                // expandedHeight: 200,
+            
+                actions: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: TextButton(
+                      child: Row(
+                        children: [
+                          const Text('Frecuencia: ',style: TextStyle(color: Colors.white),),
+                          const Text("2",style: TextStyle(color: Colors.white),),
+                          const Text("h",style: TextStyle(color: Colors.white),),
+                        ],
+                      ),
+                      onPressed: () => {
+                        showDialog(context: context, 
+                        builder: (_)  => NuevoFrecuenciaDialog(),
+                      ),
+                      },
+                    ),
+                  ),
+                  // 
+                ],
+                flexibleSpace: FlexibleSpaceBar(
+                  title: const Text('S E N S O R E S'),
                 ),
               ),
-            ), 
+            ),
+            // TittleBar('S E N S O R E S',
+            //   accion: Padding(
+            //     padding: const EdgeInsets.all(8.0),
+            //     child: TextButton(
+            //       child: const Text('Descargar',style: TextStyle(color: Colors.blue),),
+            //       onPressed: () => {
+                    
+            //       },
+            //     ),
+            //   ),
+            // ), 
             
             
 

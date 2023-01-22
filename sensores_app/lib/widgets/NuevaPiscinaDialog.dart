@@ -18,7 +18,7 @@ class _NuevaPiscinaDialogState extends State<NuevaPiscinaDialog> {
       title: const Text('Nueva Piscina\n'),
       content: CupertinoTextField(
 
-        style: TextStyle(color: Colors.white),
+        // style: TextStyle(color: Colors.white),
         placeholder: 'Nombre de la piscina',
         onChanged: (value) => {
           setState(() {
