@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import '../widgets/widgets.dart';
 
 class PiscinasPage extends StatelessWidget {
+  static const routeName = 'piscinas';
   const PiscinasPage({super.key});
 
   @override

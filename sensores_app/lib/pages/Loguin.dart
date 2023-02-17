@@ -7,7 +7,10 @@ import '../provider.dart';
 import '../widgets/widgets.dart';
 
 class Loguin extends StatefulWidget {
+  static const routeName = 'loguin';
   const Loguin({super.key});
+
+
 
   @override
   State<Loguin> createState() => _LoguinState();
@@ -83,7 +86,8 @@ class _LoguinState extends State<Loguin> {
                   onPressed: () => {
                     // para usar el loguin con aws cognito descomentar _Loguin
                     // _login(provider),
-                    Navigator.popAndPushNamed(context, 'censores'),
+                    // Navigator.popAndPushNamed(context, 'censores'),
+                    Navigator.pushReplacementNamed(context, 'censores'),
                   },
                 ),
               ),
@@ -99,7 +103,8 @@ class _LoguinState extends State<Loguin> {
     final password = _passwordController.text.trim();
     await provider.awsServices.createInitialRecord(username, password)
     ?{
-      Navigator.popAndPushNamed(context, 'piscinaPage'),
+      // Navigator.popAndPushNamed(context, 'piscinaPage'),
+      Navigator.pushReplacementNamed(context, 'piscinaPage'),
     }
     :{
         provider.awsServices.logued

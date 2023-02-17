@@ -6,12 +6,15 @@ import 'package:provider/provider.dart';
 import 'package:sensores_app/pages/Pages.dart';
 import 'package:sensores_app/provider.dart';
 
+import 'services/services.dart';
+
 void main() async{
   await dotenv.load(fileName: ".env");
   runApp(
     MultiProvider(
         providers: [
           ChangeNotifierProvider(create: (_) => provider()),
+          ChangeNotifierProvider(create: (_) => ValoresService()),
         ],
         child: const MyApp(),
       ),
@@ -27,13 +30,14 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData.light(),
       title: 'Camaronera',
-      initialRoute: 'loguin',
+      initialRoute: Loguin.routeName,
       routes: {
-        'loguin': (context) => const Loguin(),
-        'piscinaPage': (context) => const PiscinasPage(),
-        'reportes': (context) => const ReportesPage(),
-        'reporteconcreto': (context) => const ReporteConcreto(),
-        'censores': (context) => const Censores(),
+        Loguin.routeName          : (context) => const Loguin(),
+        PiscinasPage.routeName    : (context) => const PiscinasPage(),
+        ReportesPage.routeName    : (context) => const ReportesPage(),
+        ReporteConcreto.routeName : (context) => const ReporteConcreto(),
+        Censores.routeName        : (context) => const Censores(),
+        // ChartTest.routeName       : (context) => const ChartTest(),
       },
     );
   }

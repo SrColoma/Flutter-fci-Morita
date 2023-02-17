@@ -55,7 +55,8 @@ class _NuevoPasswordDialogState extends State<NuevoPasswordDialog> {
                       onPressed: () {
                         provider.awsServices.NewPasswordRequired(_nombre);
                         // Navigator.of(context).pop();
-                        Navigator.of(context).popAndPushNamed('piscinaPage');
+                        // Navigator.of(context).popAndPushNamed('piscinaPage');
+                        Navigator.pushReplacementNamed(context, 'piscinaPage');
                       },
                     ),
                   ),

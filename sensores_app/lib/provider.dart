@@ -14,4 +14,8 @@ class provider with ChangeNotifier {
   //   this.cosas2 = c2;
   //   notifyListeners();
   // }
+  // int _dato = 0;
+  // set dato(int dato) {
+  //   notifyListeners();
+  // }
 }

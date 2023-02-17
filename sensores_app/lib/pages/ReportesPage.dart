@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../widgets/widgets.dart';
 
 class ReportesPage extends StatelessWidget {
+  static const routeName = 'reportes';
   const ReportesPage({super.key});
 
   @override

@@ -19,7 +19,8 @@ class CensoCard extends StatelessWidget {
       child: InkWell(
         borderRadius: BorderRadius.circular(20),
         onTap: () {
-          Navigator.pushNamed(context, 'censado');
+          // Navigator.pushNamed(context, 'censado');
+          Navigator.pushReplacementNamed(context, 'censado');
         },
         child: Padding(
           padding: const EdgeInsets.all(30.0),

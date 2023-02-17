@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sensores_app/pages/Pages.dart';
 
 class MenuDrawer extends StatelessWidget {
   const MenuDrawer({
@@ -46,7 +47,7 @@ class MenuDrawer extends StatelessWidget {
               onTap: () {
                 // Update the state of the app.
                 // ...
-                Navigator.pushReplacementNamed(context, 'censores');
+                Navigator.pushReplacementNamed(context, Censores.routeName);
               },
             ),
             ListTile(
@@ -55,7 +56,7 @@ class MenuDrawer extends StatelessWidget {
               onTap: () {
                 // Update the state of the app.
                 // ...
-                Navigator.pushReplacementNamed(context, 'piscinaPage');
+                Navigator.pushReplacementNamed(context, PiscinasPage.routeName);
               },
             ),
             //list tile con icono de personas
@@ -65,7 +66,7 @@ class MenuDrawer extends StatelessWidget {
               onTap: () {
                 // Update the state of the app.
                 // ...
-                Navigator.pushReplacementNamed(context, 'reportes');
+                Navigator.pushReplacementNamed(context, ReportesPage.routeName);
               },
             ),
             ListTile(
@@ -74,7 +75,7 @@ class MenuDrawer extends StatelessWidget {
               onTap: () {
                 // Update the state of the app.
                 // ...
-                Navigator.pushReplacementNamed(context, 'piscinaPage');
+                Navigator.pushReplacementNamed(context, PiscinasPage.routeName);
               },
             ),
             // ListTile(
@@ -92,7 +93,7 @@ class MenuDrawer extends StatelessWidget {
               onTap: () {
                 // Update the state of the app.
                 // ...
-                Navigator.pushReplacementNamed(context, 'loguin');
+                Navigator.pushReplacementNamed(context, Loguin.routeName);
               },
             ),
             
